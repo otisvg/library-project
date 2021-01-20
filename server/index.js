@@ -4,8 +4,12 @@ import mongoose from 'mongoose';
 import cors from 'cors';  
 import dotenv from 'dotenv';
 
+import bookRoutes from './routes/books.js'
+
 const app = express();
 dotenv.config();
+
+app.use('/books', bookRoutes);
 
 app.use(bodyParser.json({ limit: "20mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "20mb", extended: true }));
